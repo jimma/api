@@ -303,6 +303,7 @@ public interface Invocation {
          * <p>
          * This method is an extension point for JAX-RS implementations to support other types
          * representing asynchronous computations.
+         * @param <R>
          *
          * @param clazz {@link RxInvoker} subclass.
          * @return reactive invoker instance.
@@ -310,7 +311,7 @@ public interface Invocation {
          * @see javax.ws.rs.client.Client#register(Class)
          * @since 2.1
          */
-        public <T extends RxInvoker> T rx(Class<T> clazz);
+        public <T extends RxInvoker> T rx(RxInvokerProvider provider);
 
     }
 
